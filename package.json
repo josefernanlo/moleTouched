@@ -1,8 +1,8 @@
 {
-  "name": "octopus-touch",
-  "description": "Webcomponent octopus-touch following open-wc recommendations",
+  "name": "mole-touch",
+  "description": "Webcomponent mole-touch following open-wc recommendations",
   "license": "MIT",
-  "author": "octopus-touch",
+  "author": "mole-touch",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
