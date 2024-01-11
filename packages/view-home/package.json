@@ -1,54 +1,40 @@
 {
-  "name": "octopus-touch",
-  "description": "Webcomponent octopus-touch following open-wc recommendations",
+  "name": "@mole/view-home",
+  "description": "Webcomponent view-home following open-wc recommendations",
   "license": "MIT",
-  "author": "octopus-touch",
+  "author": "view-home",
   "version": "0.0.0",
   "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./view-home.js": "./view-home.js"
+  },
   "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server",
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
     "format": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
     "test": "web-test-runner --coverage",
-    "test:watch": "web-test-runner --watch",
-    "build": "rimraf dist && rollup -c rollup.config.js && npm run analyze -- --exclude dist",
-    "start:build": "web-dev-server --root-dir dist --app-index index.html --open",
-    "analyze": "cem analyze --litelement",
-    "start": "web-dev-server"
+    "test:watch": "web-test-runner --watch"
   },
   "dependencies": {
     "lit": "^2.0.2"
   },
-  "workspaces": [
-    "packages/*"
-  ],
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
-  },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.4",
     "@custom-elements-manifest/analyzer": "^0.4.17",
-    "@open-wc/building-rollup": "^2.0.2",
     "@open-wc/eslint-config": "^9.2.1",
     "@open-wc/testing": "^3.1.6",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-node-resolve": "^13.0.6",
     "@web/dev-server": "^0.1.34",
-    "@web/rollup-plugin-html": "^1.11.0",
-    "@web/rollup-plugin-import-meta-assets": "^1.0.7",
     "@web/test-runner": "^0.14.0",
-    "babel-plugin-template-html-minifier": "^4.1.0",
-    "deepmerge": "^4.2.2",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
-    "prettier": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.60.0",
-    "rollup-plugin-esbuild": "^5.0.0",
-    "rollup-plugin-workbox": "^6.2.0"
+    "prettier": "^2.4.1"
   },
+  "customElements": "custom-elements.json",
   "eslintConfig": {
     "extends": [
       "@open-wc",
@@ -69,6 +55,5 @@
       "eslint --fix",
       "prettier --write"
     ]
-  },
-  "customElements": "custom-elements.json"
+  }
 }
