@@ -1,9 +1,9 @@
 {
-  "name": "octopus-touch",
-  "description": "Webcomponent octopus-touch following open-wc recommendations",
+  "name": "mole-touch",
+  "description": "Webcomponent mole-touch following open-wc recommendations",
   "license": "MIT",
-  "author": "octopus-touch",
-  "version": "0.0.0",
+  "author": "mole-touch",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
@@ -17,6 +17,13 @@
   },
   "dependencies": {
     "lit": "^2.0.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
