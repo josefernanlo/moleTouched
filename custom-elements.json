@@ -64,51 +64,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "packages/view-home/src/ViewHome.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "ViewHome",
-          "members": [
-            {
-              "kind": "field",
-              "name": "header",
-              "type": {
-                "text": "string"
-              },
-              "default": "'Soy el componente: view-home!'",
-              "privacy": "public",
-              "attribute": "header"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "header",
-              "fieldName": "header"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "view-home",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ViewHome",
-          "declaration": {
-            "name": "ViewHome",
-            "module": "packages/view-home/src/ViewHome.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "packages/flow-mole/src/FlowMole.js",
       "declarations": [
         {
@@ -148,6 +103,51 @@
           "declaration": {
             "name": "FlowMole",
             "module": "packages/flow-mole/src/FlowMole.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "packages/view-home/src/ViewHome.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ViewHome",
+          "members": [
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Soy el componente: view-home!'",
+              "privacy": "public",
+              "attribute": "header"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "header",
+              "fieldName": "header"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "view-home",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ViewHome",
+          "declaration": {
+            "name": "ViewHome",
+            "module": "packages/view-home/src/ViewHome.js"
           }
         }
       ]
