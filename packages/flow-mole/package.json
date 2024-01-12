@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "lit": "^2.0.2",
+    "@vaadin/router": "1.7.5",
     "@mole/view-home": "^0.0.0"
   },
   "devDependencies": {
