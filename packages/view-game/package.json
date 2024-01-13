@@ -1,15 +1,15 @@
 {
-  "name": "@mole/flow-mole",
-  "description": "Webcomponent flow-mole following open-wc recommendations",
+  "name": "@mole/view-game",
+  "description": "Webcomponent view-game following open-wc recommendations",
   "license": "MIT",
-  "author": "flow-mole",
+  "author": "view-game",
   "version": "0.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
   "exports": {
     ".": "./index.js",
-    "./flow-mole.js": "./flow-mole.js"
+    "./view-game.js": "./view-game.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
@@ -20,10 +20,7 @@
     "test:watch": "web-test-runner --watch"
   },
   "dependencies": {
-    "lit": "^2.0.2",
-    "@vaadin/router": "1.7.5",
-    "@mole/view-home": "^0.0.0",
-    "@mole/view-game": "^0.0.0"
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",

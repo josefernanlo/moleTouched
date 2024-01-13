@@ -1,15 +1,15 @@
 {
-  "name": "@mole/flow-mole",
-  "description": "Webcomponent flow-mole following open-wc recommendations",
+  "name": "@mole/component-button",
+  "description": "Webcomponent component-button following open-wc recommendations",
   "license": "MIT",
-  "author": "flow-mole",
+  "author": "component-button",
   "version": "0.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
   "exports": {
     ".": "./index.js",
-    "./flow-mole.js": "./flow-mole.js"
+    "./component-button.js": "./component-button.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
@@ -20,10 +20,7 @@
     "test:watch": "web-test-runner --watch"
   },
   "dependencies": {
-    "lit": "^2.0.2",
-    "@vaadin/router": "1.7.5",
-    "@mole/view-home": "^0.0.0",
-    "@mole/view-game": "^0.0.0"
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",

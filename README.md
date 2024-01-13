@@ -1,18 +1,22 @@
-<p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
-</p>
 
-## Open-wc Starter App
-
+## Mole-touched
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
+A simple game created with lit using open-wc recommendations.
 
 ## Quickstart
+To get started, you have two options:
+- You can try the demo
+- You can start a server locally. 
 
-To get started:
+For this second option you must follow this simple instructions. 
+1. Open a terminal or cmd
+2. Navigate to the root of this project
+3. Install the dependencies and start a server using this commands:
 
 ```bash
-npm init @open-wc
-# requires node 10 & npm 6 or higher
+npm i 
+npm run start
+# tested with node 16.20 & npm 8.19.
 ```
 
 ## Scripts
@@ -24,8 +28,7 @@ npm init @open-wc
 - `lint` runs the linter for your project
 - `format` fixes linting and formatting errors
 
-## Tooling configs
+## About this project
 
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+*Details not provided yet...*
 
-If you customize the configuration a lot, you can consider moving them to individual files.
