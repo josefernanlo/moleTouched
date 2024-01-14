@@ -4,7 +4,7 @@
 const hmr = process.argv.includes('--hmr');
 
 export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
-  open: '/',
+  open: '/moleTouchedDemo/',
   watch: !hmr,
   /** Resolve bare module imports */
   nodeResolve: {

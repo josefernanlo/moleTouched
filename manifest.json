@@ -1,0 +1,36 @@
+{
+    "name": "Mole Touch Game",
+    "short_name": "Mole Touch",
+    "start_url": "/",
+    "display": "fullscreen",
+    "background_color": "#74e84a",
+    "theme_color": "#74e84a",
+    "icons": [
+        {
+            "src": "/resources/moleIconMaskable.png",
+            "sizes": "600x600",
+            "type": "image/png",
+            "purpose": "maskable"
+        }, 
+        {
+            "src": "/resources/moleIconAny.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "description": "A simple game where you have to touch the mole as many times as possible in 30 seconds",
+    "screenshots": [
+        {
+          "src": "/resources/screenshotNarrow00.png",
+          "type": "image/png",
+          "sizes": "816x1542",
+          "form_factor": "narrow"
+        }, {
+          "src": "/resources/screenshotWide00.png",
+          "type": "image/png",
+          "sizes": "2880x1212",
+          "form_factor": "wide"
+        }
+    ]
+}

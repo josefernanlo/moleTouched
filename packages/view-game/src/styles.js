@@ -4,6 +4,7 @@ export const cssStyles = css`
   :host {
     display: block;
     color: var(--view-game-text-color, #000);
+    max-width: 500px;
   }
 
   #pipe-container {

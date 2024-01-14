@@ -4,6 +4,7 @@ export const cssStyles = css`
   :host {
     display: block;
     color: var(--view-home-text-color, #000);
+    max-width: 500px;
   }
 
   #difficultLevel {

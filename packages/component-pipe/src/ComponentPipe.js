@@ -35,6 +35,7 @@ export class ComponentPipe extends LitElement {
           class="${this.status}"
           src="./resources/mole.png"
           alt="mole"
+          draggable="false"
         />
         <div id="head-pipe">
           <div id="pipe-mark"></div>
