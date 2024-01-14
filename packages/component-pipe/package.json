@@ -1,15 +1,15 @@
 {
-  "name": "@mole/view-game",
-  "description": "Webcomponent view-game following open-wc recommendations",
+  "name": "@mole/component-pipe",
+  "description": "Webcomponent component-pipe following open-wc recommendations",
   "license": "MIT",
-  "author": "view-game",
+  "author": "component-pipe",
   "version": "0.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
   "exports": {
     ".": "./index.js",
-    "./view-game.js": "./view-game.js"
+    "./component-pipe.js": "./component-pipe.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
@@ -20,8 +20,7 @@
     "test:watch": "web-test-runner --watch"
   },
   "dependencies": {
-    "lit": "^2.0.2",
-    "@mole/component-pipe": "^0.0.0"
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
