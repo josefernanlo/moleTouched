@@ -19,8 +19,9 @@ export class FlowMole extends LitElement {
 
   constructor() {
     super();
-    this.subroute = '';
     this._onStartFunction = this._onStart.bind(this);
+    // This variable contains all the routes of the app but is not used
+    this.routes = URLS;
   }
 
   /**
@@ -43,13 +44,12 @@ export class FlowMole extends LitElement {
   }
 
   firstUpdated() {
-    this._getRightUrl(window.location.href);
     // Check docs about router: https://github.com/vaadin/router
     const router = new Router(this._outletElement);
     router.setRoutes([
-      { path: `${this.subroute}${ROUTES.HOME}`, component: 'view-home' },
+      { path: ROUTES.HOME, component: 'view-home' },
       {
-        path: `${this.subroute}${ROUTES.GAME}`,
+        path: ROUTES.GAME,
         component: 'view-game',
         action: () => {
           /**
@@ -62,35 +62,11 @@ export class FlowMole extends LitElement {
         },
       },
       {
-        path: `${this.subroute}${ROUTES.ARCHIEVEMENTS}`,
+        path: ROUTES.ARCHIEVEMENTS,
         component: 'view-archievements',
       },
-      { path: '(.*)', redirect: `${this.subroute}/` },
+      { path: '(.*)', redirect: ROUTES.HOME },
     ]);
-  }
-
-  /**
-   * This function is executed after the first render (firstUpdated function)
-   *
-   * Made to get the right url when the app is running in a subroute
-   * @example If the app is deployed in https://example.com/moleTouchedDemo/ the subroute will be '/moleTouchedDemo'
-   * @example If the app is deployed in https://example.com/ the subroute will be ''
-   *
-   * It only work with 1 level of subroute
-   * @example https://example.com/moleTouchedDemo/otherSubroute will not work, the subroute will be '/moleTouchedDemo'
-   * You must use one level of subroute or modify this function, but for this demo is enough.
-   *
-   * Some subroutes like /game or /archievements are not valid, so we made a redirect to the domain
-   * @example https://example.com/game/game will be redirected to https://example.com
-   * Please avoid using subroutes that are equal to the routes, again this is enough for this demo.
-   *
-   * @param {String} url
-   */
-  _getRightUrl(url) {
-    const [, , , subRoute] = url.split('/');
-    if (subRoute !== '' && !URLS.includes(subRoute)) {
-      this.subroute = `/${subRoute}`;
-    }
   }
 
   /**

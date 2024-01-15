@@ -23,7 +23,7 @@ export class ViewGame extends LitElement {
     this.interval = setInterval(() => {
       const randomNumber = Math.floor(Math.random() * 9);
       pipes[randomNumber].status = 'up';
-    }, 200);
+    }, 500);
   }
 
   render() {
