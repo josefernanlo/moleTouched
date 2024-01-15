@@ -17,4 +17,9 @@ export const cssStyles = css`
     height: 100%;
     max-height: 500px;
   }
+
+  .headerTemp {
+    display: flex;
+    justify-content: space-between;
+  }
 `;

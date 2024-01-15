@@ -1,14 +1,24 @@
 export const DIFFICULTY_LEVELS = {
   easy: {
-    refreshRate: '',
-    points: '10',
+    refreshRate: 1000,
+    points: 10,
+    literal: 'Fácil',
   },
   medium: {
-    refreshRate: '',
-    points: '20',
+    refreshRate: 750,
+    points: 20,
+    literal: 'Medio',
   },
   hard: {
-    refreshRate: '',
-    points: '30',
+    refreshRate: 500,
+    points: 30,
+    literal: 'Difícil',
   },
 };
+
+export const SIZE = {
+  columns: 3,
+  rows: 3,
+};
+
+export const RANDOM_POSSIBILITY = SIZE.columns * SIZE.rows;

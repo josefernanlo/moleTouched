@@ -64,21 +64,21 @@ export class ViewHome extends LitElement {
         <div id="difficultLevel">
           <component-button
             @click="${() => {
-              ViewHome._startGame('easy');
+              this._startGame('easy');
             }}"
             id="easy"
             >Fácil</component-button
           >
           <component-button
             @click="${() => {
-              ViewHome._startGame('medium');
+              this._startGame('medium');
             }}"
             id="medium"
             >Medio</component-button
           >
           <component-button
             @click="${() => {
-              ViewHome._startGame('hard');
+              this._startGame('hard');
             }}"
             id="hard"
             >Difícil</component-button
@@ -114,9 +114,11 @@ export class ViewHome extends LitElement {
    * dispatch a custom event (start-game) to start the game
    * @param {String} difficulty
    */
-  static _startGame(difficulty) {
+  _startGame(difficulty) {
     dispatchEvent(
-      new CustomEvent('view-home-start-game', { detail: { difficulty } })
+      new CustomEvent('view-home-start-game', {
+        detail: { difficulty, userName: this.name },
+      })
     );
   }
 }

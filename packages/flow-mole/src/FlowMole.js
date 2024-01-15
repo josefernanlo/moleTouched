@@ -22,6 +22,8 @@ export class FlowMole extends LitElement {
     this._onStartFunction = this._onStart.bind(this);
     // This variable contains all the routes of the app but is not used
     this.routes = URLS;
+    this.difficulty = null;
+    this.userName = null;
   }
 
   /**
@@ -57,7 +59,8 @@ export class FlowMole extends LitElement {
            * the return value is the component that will be rendered
            */
           const component = document.createElement('view-game');
-          component.difficulty = this.difficulty;
+          component.difficulty = this.difficulty || component.difficulty;
+          component.userName = this.userName || component.userName;
           return component;
         },
       },
@@ -91,6 +94,7 @@ export class FlowMole extends LitElement {
    */
   _onStart({ detail }) {
     this.difficulty = detail.difficulty;
+    this.userName = detail.userName;
     Router.go('/game');
   }
 

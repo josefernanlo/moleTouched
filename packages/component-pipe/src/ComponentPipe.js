@@ -11,29 +11,28 @@ export class ComponentPipe extends LitElement {
   constructor() {
     super();
     this.status = 'initial';
-    this.id = '00';
-  }
-
-  get moleElement() {
-    return this.shadowRoot.getElementById('mole');
   }
 
   _onclick() {
     if (this.status === 'up') {
+      const event = new CustomEvent('component-pipe-clicked', {
+        cancelable: true,
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(event);
       this.status = 'initial';
-      dispatchEvent(
-        new CustomEvent('component-pipe-clicked', { detail: { id: this.id } })
-      );
     }
   }
 
   render() {
+    const imageUrlMole = new URL('./resources/mole.png', import.meta.url);
     return html`
-      <div @click="${() => this._onclick()}" @keydown="${() => {}}">
+      <div @click="${this._onclick}" @keydown="${() => {}}">
         <img
           id="mole"
           class="${this.status}"
-          src="./resources/mole.png"
+          src="${imageUrlMole.href}"
           alt="mole"
           draggable="false"
         />
