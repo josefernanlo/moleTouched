@@ -182,7 +182,9 @@ export class ViewGame extends LitElement {
               { length: SIZE.rows },
               () =>
                 html` <component-pipe
-                  @component-pipe-clicked=${this._onSlapMole}
+                  @component-pipe-clicked=${() => {
+                    this._onSlapMole();
+                  }}
                 ></component-pipe>`
             )}
           </div>`

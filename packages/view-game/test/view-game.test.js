@@ -99,16 +99,16 @@ describe('ViewGame', () => {
 
   it('should _onSlapMole function executed when a mole is clicked', async () => {
     const el = await fixture(html`<view-game></view-game>`);
-    let called = false;
-    const stub = sinon.stub(el, '_onSlapMole').returns((called = true));
+
+    const sandbox = sinon.createSandbox();
 
     const pipe = el.shadowRoot.querySelector('component-pipe');
-    pipe.dispatchEvent(new CustomEvent('component-pipe-clicked'), {
-      bubbles: true,
-    });
+    const spyMethod = sandbox.spy(el, '_onSlapMole');
 
-    assert.isTrue(called);
-    stub.restore();
+    pipe.dispatchEvent(new CustomEvent('component-pipe-clicked'));
+
+    await expect(spyMethod).to.have.been.calledOnce;
+    sandbox.restore();
   });
 
   it('should event being dispatched when a mole is clicked', async () => {
