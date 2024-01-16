@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "lit": "^2.0.2",
-    "@mole/component-pipe": "^0.0.0"
+    "@mole/component-pipe": "^0.0.0",
+    "@mole/component-button" : "^0.0.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",

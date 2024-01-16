@@ -6,6 +6,7 @@ export const cssStyles = css`
     color: var(--component-button-text-color, #000);
     width: min-content;
     margin-top: 20px;
+    width: min-content;
   }
   .button-82-pushable {
     position: relative;
@@ -18,6 +19,7 @@ export const cssStyles = css`
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    width: 100%;
   }
   .button-82-shadow {
     position: absolute;
@@ -53,16 +55,11 @@ export const cssStyles = css`
     border-radius: 12px;
     font-size: 1.1rem;
     color: white;
-    background: hsl(345deg 100% 47%);
+    background: rgb(179, 0, 47);
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-  }
-  @media (min-width: 768px) {
-    .button-82-front {
-      font-size: 1.25rem;
-      padding: 12px 42px;
-    }
+    font-family: 'Pixelify Sans';
   }
   .button-82-pushable:hover {
     filter: brightness(110%);

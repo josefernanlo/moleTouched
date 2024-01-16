@@ -51,6 +51,8 @@ export const cssStyles = css`
     height: 100px;
     margin: 0 auto;
     transition: top 0.1s;
+    width: 100px;
+    height: 100px;
   }
 
   .initial {

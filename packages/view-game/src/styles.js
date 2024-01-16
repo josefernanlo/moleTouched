@@ -2,7 +2,9 @@ import { css } from 'lit';
 
 export const cssStyles = css`
   :host {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: var(--view-game-text-color, #000);
     max-width: 500px;
   }
@@ -21,5 +23,19 @@ export const cssStyles = css`
   .headerTemp {
     display: flex;
     justify-content: space-between;
+  }
+
+  #footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #changeDifficulty {
+    flex-grow: 1;
+    max-width: 60%;
+  }
+
+  .paused {
+    opacity: 0.3;
   }
 `;
