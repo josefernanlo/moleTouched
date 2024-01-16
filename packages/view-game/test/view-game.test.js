@@ -111,6 +111,21 @@ describe('ViewGame', () => {
     stub.restore();
   });
 
+  it('should event being dispatched when a mole is clicked', async () => {
+    const spy = sinon.spy();
+    const el = await fixture(html`<view-game></view-game>`);
+
+    const pipe = el.shadowRoot.querySelector('component-pipe');
+    pipe.addEventListener('component-pipe-clicked', spy);
+
+    pipe.dispatchEvent(new CustomEvent('component-pipe-clicked'), {
+      bubbles: true,
+    });
+
+    await el.updateComplete;
+    expect(spy).to.have.been.calledOnce;
+  });
+
   it('should _onSlapMole function change isPlaying property to true when isPlaying is false and this function is executed ', async () => {
     const el = await fixture(html`<view-game></view-game>`);
     el.isPlaying = false;
