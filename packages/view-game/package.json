@@ -3,7 +3,7 @@
   "description": "Webcomponent view-game following open-wc recommendations",
   "license": "MIT",
   "author": "view-game",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "lit": "^2.0.2",
-    "@mole/component-pipe": "^0.0.0",
-    "@mole/component-button" : "^0.0.0"
+    "@mole/component-pipe": "^1.0.0",
+    "@mole/component-button" : "^1.0.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
@@ -34,7 +34,8 @@
     "eslint-config-prettier": "^8.3.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "sinon" : "^17.0.1"
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {

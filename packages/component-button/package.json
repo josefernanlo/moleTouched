@@ -3,7 +3,7 @@
   "description": "Webcomponent component-button following open-wc recommendations",
   "license": "MIT",
   "author": "component-button",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",

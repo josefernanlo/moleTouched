@@ -1,11 +1,19 @@
 
 ## Mole-touched
+
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
+![Website up](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)
+![AMA](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
+
+
+<img src="https://moletouch.netlify.app/resources/moleIconMaskable.png" alt="Mole touched app icon" style="width: 100px; border-radius: 20px;">
+
 A simple game created with lit using open-wc recommendations.
+This is a PWA app that can run offline. 
 
 ## Quickstart
 To get started, you have two options:
-- You can try the demo
+- You can try [the online demo](https://moletouch.netlify.app/) 
 - You can start a server locally. 
 
 For this second option you must follow this simple instructions. 
@@ -27,8 +35,3 @@ npm run start
 - `test` runs your test suite with Web Test Runner
 - `lint` runs the linter for your project
 - `format` fixes linting and formatting errors
-
-## About this project
-
-*Details not provided yet...*
-

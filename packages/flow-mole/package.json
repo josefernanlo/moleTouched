@@ -3,7 +3,7 @@
   "description": "Webcomponent flow-mole following open-wc recommendations",
   "license": "MIT",
   "author": "flow-mole",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -22,8 +22,8 @@
   "dependencies": {
     "lit": "^2.0.2",
     "@vaadin/router": "1.7.5",
-    "@mole/view-home": "^0.0.0",
-    "@mole/view-game": "^0.0.0"
+    "@mole/view-home": "^1.0.0",
+    "@mole/view-game": "^1.0.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",

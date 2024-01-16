@@ -187,7 +187,7 @@ export class ViewGame extends LitElement {
   }
 
   get _normalMenuTemplate() {
-    return html` <component-button @click="${this._changeStatus}"
+    return html` <component-button id="playPause" @click="${this._changeStatus}"
         >${this.isPlaying ? 'Pausar' : 'Reanudar'}</component-button
       >
       <component-button id="changeDifficulty" @click="${this._changeDifficulty}"
@@ -197,6 +197,7 @@ export class ViewGame extends LitElement {
 
   get _changeDifficultyTemplate() {
     return html` <component-button
+        id="easyButton"
         @click="${() => {
           this.difficulty = 'easy';
           this.isChangingDifficulty = false;
@@ -204,6 +205,7 @@ export class ViewGame extends LitElement {
         >Fácil</component-button
       >
       <component-button
+        id="mediumButton"
         @click="${() => {
           this.difficulty = 'medium';
           this.isChangingDifficulty = false;
@@ -211,6 +213,7 @@ export class ViewGame extends LitElement {
         >Medio</component-button
       >
       <component-button
+        id="hardButton"
         @click="${() => {
           this.difficulty = 'hard';
           this.isChangingDifficulty = false;

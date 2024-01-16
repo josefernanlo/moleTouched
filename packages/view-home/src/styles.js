@@ -26,4 +26,9 @@ export const cssStyles = css`
     justify-content: space-between;
     flex-grow: 1;
   }
+
+  .error {
+    border: solid 4px rgb(179, 0, 47);
+    border-radius: 5px;
+  }
 `;

@@ -8,7 +8,7 @@ export class ComponentButton extends LitElement {
 
   render() {
     return html`
-      <button class="button-82-pushable">
+      <button class="button-82-pushable" aria-label="Botón">
         <span class="button-82-shadow"></span>
         <span class="button-82-edge"></span>
         <span class="button-82-front text"> <slot></slot> </span>

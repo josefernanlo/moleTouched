@@ -7,3 +7,6 @@ node_modules
 # Ignora la carpeta dist
 dist
 custom-elements.json
+
+# Ignora la carpeta coverage
+coverage

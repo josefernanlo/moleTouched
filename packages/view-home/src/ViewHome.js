@@ -4,6 +4,10 @@ import { cssStyles } from './styles.js';
 // Components
 import '@mole/component-button/component-button.js';
 
+/**
+ * Represents the ViewHome component, which is responsible for rendering the home view of the application.
+ * This component allows the user to enter their name and choose the difficulty level before starting the game.
+ */
 export class ViewHome extends LitElement {
   static styles = cssStyles;
 
@@ -14,20 +18,84 @@ export class ViewHome extends LitElement {
 
   constructor() {
     super();
-    this.name = null;
+    this.name = '';
     this.step = 0;
+  }
+
+  firstUpdated() {
+    this._inputElement.focus();
   }
 
   get _inputElement() {
     return this.shadowRoot.getElementById('name');
   }
 
-  get _buttonContinueElement() {
-    return this.shadowRoot.getElementById('continue');
+  get _errorMessageElement() {
+    return this.shadowRoot.getElementById('errorMessage');
   }
 
-  get _secondStepElement() {
-    return this.shadowRoot.getElementById('secondStep');
+  /**
+   * Fired when user writes on the input
+   */
+  _onInput() {
+    this.name = this._inputElement.value;
+  }
+
+  /**
+   * Fired when user clicks on the return button
+   * Go back to the first step
+   */
+  async _goBack() {
+    this.step = 0;
+    await this.updateComplete;
+    this._inputElement.value = this.name ? this.name : '';
+  }
+
+  /**
+   * Fired when user clicks on the continue button
+   * Check if the name is valid and go to the second step
+   * If the name is not valid, add the error class to the input
+   */
+  _onContinue() {
+    if (this._checkValidName()) {
+      this.step = 1;
+    } else {
+      this._inputElement.focus();
+      this._inputElement.classList.add('error');
+      this._errorMessageElement.hidden = false;
+    }
+  }
+
+  /**
+   * Check if the name is valid
+   * Is valid if the name is between 4 and 10 characters and only letters and spaces.
+   * If the name is valid, capitalize the first letter and remove spaces at the beginning and end.
+   * If the name is not valid, remove the error class to the input
+   * @returns {Boolean} true if the name is valid, false if not
+   */
+  _checkValidName() {
+    const regex = /^[a-zA-Z\s]{4,10}$/;
+    const isValid = regex.test(this.name);
+    if (isValid) {
+      this._inputElement.classList.remove('error');
+      this._errorMessageElement.hidden = true;
+      const name = this.name.trim();
+      this.name = `${name[0].toUpperCase()}${name.slice(1)}`;
+    }
+    return isValid;
+  }
+
+  /**
+   * Fired when user clicks on the button
+   * dispatch a custom event (start-game) to start the game
+   * @param {String} difficulty
+   */
+  _startGame(difficulty) {
+    dispatchEvent(
+      new CustomEvent('view-home-start-game', {
+        detail: { difficulty, userName: this.name },
+      })
+    );
   }
 
   get _firstStepTemplate() {
@@ -43,7 +111,7 @@ export class ViewHome extends LitElement {
           <p>
             Para ello, tendrás que demostrar que eres el mejor cazador de topos.
             ¿Cómo? Sencillo, cazando topos, simplemente cuando veas uno haz
-            click en él y listo.
+            click en el y listo.
           </p>
           <p>
             Pero para ello antes debes decirnos cual es tu nombre, como buen
@@ -56,20 +124,20 @@ export class ViewHome extends LitElement {
             name="name"
             required
             minlength="4"
-            maxlength="20"
-            size="10"
+            maxlength="10"
+            size="12"
             @input="${() => this._onInput()}"
           />
+          <p id="errorMessage" hidden>
+            El nombre no puede contener números y debe tener un mínimo de 4
+            caracteres y un máximo de 20
+          </p>
         </div>
-        <component-button id="continue" @click="${() => this.onContinue()}">
+        <component-button id="continue" @click="${this._onContinue}">
           Continuar
         </component-button>
       </div>
     `;
-  }
-
-  _goBack() {
-    this.step = 0;
   }
 
   get _secondStepTemplate() {
@@ -78,9 +146,10 @@ export class ViewHome extends LitElement {
       <div id="secondStep" class="card">
         <div class="description">
           <p>
-            Perfecto ${this.name}, parece que todo está en orden... Ahora
-            necesitamos que entres en nuestro campo de entrenamiento, ya sabes
-            las reglas, la puntuación solo depende de ti.
+            Perfecto ${this.name}, parece que todo está en orden y tu licencia
+            está correcta... Ahora necesitamos que entres en nuestro campo de
+            entrenamiento, ya sabes las reglas, la puntuación solo depende de
+            ti.
           </p>
           <p>¡Buena suerte!</p>
         </div>
@@ -121,32 +190,5 @@ export class ViewHome extends LitElement {
       ${this.step === 0 ? this._firstStepTemplate : nothing}
       ${this.step === 1 ? this._secondStepTemplate : nothing}
     `;
-  }
-
-  /**
-   * Fired when user writes on the input
-   */
-  _onInput() {
-    this.name = this._inputElement.value;
-  }
-
-  /**
-   * Fired when user clicks on the button
-   */
-  onContinue() {
-    this.step = 1;
-  }
-
-  /**
-   * Fired when user clicks on the button
-   * dispatch a custom event (start-game) to start the game
-   * @param {String} difficulty
-   */
-  _startGame(difficulty) {
-    dispatchEvent(
-      new CustomEvent('view-home-start-game', {
-        detail: { difficulty, userName: this.name },
-      })
-    );
   }
 }

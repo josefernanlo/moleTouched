@@ -15,11 +15,9 @@
     import { html, render } from 'lit';
     import '../view-home.js';
 
-    const header = 'Hello owc World!';
     render(
       html`
-        <view-home .header=${header}>
-          some light-dom
+        <view-home>
         </view-home>
       `,
       document.querySelector('#demo')

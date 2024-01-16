@@ -1,34 +1,44 @@
 import { html } from 'lit';
-import { fixture, expect } from '@open-wc/testing';
+import { fixture, expect, assert } from '@open-wc/testing';
 
 import '../component-pipe.js';
 
 describe('ComponentPipe', () => {
-  it('has a default header "Hey there" and counter 5', async () => {
+  it('should has the class "initial" attached', async () => {
     const el = await fixture(html`<component-pipe></component-pipe>`);
-
-    expect(el.header).to.equal('Hey there');
-    expect(el.counter).to.equal(5);
+    const mole = el.shadowRoot.querySelector('img');
+    assert.isTrue(mole.classList.contains('initial'));
   });
 
-  it('increases the counter on button click', async () => {
+  it('should not change status property when his value is "initial" and the element is clicked', async () => {
     const el = await fixture(html`<component-pipe></component-pipe>`);
-    el.shadowRoot.querySelector('button').click();
-
-    expect(el.counter).to.equal(6);
+    const divContainer = el.shadowRoot.querySelector('div');
+    divContainer.click();
+    await el.updateComplete;
+    assert.equal(el.status, 'initial');
   });
 
-  it('can override the header via attribute', async () => {
-    const el = await fixture(
-      html`<component-pipe header="attribute header"></component-pipe>`
-    );
+  it('should dispatch an event when status property when his value is "up" and the element is clicked', async () => {
+    const el = await fixture(html`<component-pipe></component-pipe>`);
+    // addEventListener
+    let eventDispatched = false;
+    el.addEventListener('component-pipe-clicked', () => {
+      eventDispatched = true;
+    });
 
-    expect(el.header).to.equal('attribute header');
+    // Simulate click when status is "up"
+    const divContainer = el.shadowRoot.querySelector('div');
+    el.status = 'up';
+    await el.updateComplete;
+    divContainer.click();
+    await el.updateComplete;
+
+    // Check if event was dispatched
+    assert.isTrue(eventDispatched);
   });
 
-  it('passes the a11y audit', async () => {
+  it('should passes the a11y audit', async () => {
     const el = await fixture(html`<component-pipe></component-pipe>`);
-
     await expect(el).shadowDom.to.be.accessible();
   });
 });

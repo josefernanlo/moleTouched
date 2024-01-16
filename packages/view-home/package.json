@@ -3,7 +3,7 @@
   "description": "Webcomponent view-home following open-wc recommendations",
   "license": "MIT",
   "author": "view-home",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "lit": "^2.0.2",
-    "@mole/component-button" : "^0.0.0"
+    "@mole/component-button" : "^1.0.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
@@ -32,6 +32,7 @@
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^4.3.8",
+    "sinon" : "^17.0.1",
     "lint-staged": "^10.5.4",
     "prettier": "^2.4.1"
   },
