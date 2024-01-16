@@ -22,3 +22,8 @@ export const SIZE = {
 };
 
 export const RANDOM_POSSIBILITY = SIZE.columns * SIZE.rows;
+
+export const STATUS = {
+  INITIAL: 'initial',
+  UP: 'up',
+};

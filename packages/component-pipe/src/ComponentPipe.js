@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit';
 import { cssStyles } from './styles.js';
+import { STATUS } from './constants.js';
 
 export class ComponentPipe extends LitElement {
   static styles = cssStyles;
@@ -10,18 +11,18 @@ export class ComponentPipe extends LitElement {
 
   constructor() {
     super();
-    this.status = 'initial';
+    this.status = STATUS.INITIAL;
   }
 
   _onclick() {
-    if (this.status === 'up') {
+    if (this.status === STATUS.UP) {
       const event = new CustomEvent('component-pipe-clicked', {
         cancelable: true,
         bubbles: true,
         composed: true,
       });
       this.dispatchEvent(event);
-      this.status = 'initial';
+      this.status = STATUS.INITIAL;
     }
   }
 

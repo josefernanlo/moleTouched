@@ -8,7 +8,7 @@ export const cssStyles = css`
     margin-top: 20px;
     width: min-content;
   }
-  .button-82-pushable {
+  .button {
     position: relative;
     border: none;
     background: transparent;
@@ -21,7 +21,7 @@ export const cssStyles = css`
     touch-action: manipulation;
     width: 100%;
   }
-  .button-82-shadow {
+  .button-shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +33,7 @@ export const cssStyles = css`
     transform: translateY(2px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
   }
-  .button-82-edge {
+  .button-shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@ export const cssStyles = css`
       hsl(340deg 100% 16%) 100%
     );
   }
-  .button-82-front {
+  .button-front {
     display: block;
     position: relative;
     padding: 12px 27px;
@@ -61,27 +61,27 @@ export const cssStyles = css`
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
     font-family: 'Pixelify Sans';
   }
-  .button-82-pushable:hover {
+  .button:hover {
     filter: brightness(110%);
     -webkit-filter: brightness(110%);
   }
-  .button-82-pushable:hover .button-82-front {
+  .button:hover .button-front {
     transform: translateY(-6px);
     transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
   }
-  .button-82-pushable:active .button-82-front {
+  .button:active .button-front {
     transform: translateY(-2px);
     transition: transform 34ms;
   }
-  .button-82-pushable:hover .button-82-shadow {
+  .button:hover .button-shadow {
     transform: translateY(4px);
     transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
   }
-  .button-82-pushable:active .button-82-shadow {
+  .button:active .button-shadow {
     transform: translateY(1px);
     transition: transform 34ms;
   }
-  .button-82-pushable:focus:not(:focus-visible) {
+  .button:focus:not(:focus-visible) {
     outline: none;
   }
 `;

@@ -1,6 +1,11 @@
 import { html, LitElement } from 'lit';
 import { cssStyles } from './styles.js';
-import { DIFFICULTY_LEVELS, RANDOM_POSSIBILITY, SIZE } from './constants.js';
+import {
+  DIFFICULTY_LEVELS,
+  RANDOM_POSSIBILITY,
+  SIZE,
+  STATUS,
+} from './constants.js';
 
 // Components
 import '@mole/component-pipe/component-pipe.js';
@@ -54,7 +59,7 @@ export class ViewGame extends LitElement {
   static _resetPipes(pipes) {
     pipes.forEach(pipe => {
       const currentPipe = pipe;
-      currentPipe.status = 'initial';
+      currentPipe.status = STATUS.INITIAL;
     });
   }
 
@@ -103,7 +108,7 @@ export class ViewGame extends LitElement {
         const randomNumber = ViewGame._generateRandomNumber({
           previousNumber: previousPipe,
         });
-        pipes[randomNumber].status = 'up';
+        pipes[randomNumber].status = STATUS.UP;
         previousPipe = randomNumber;
       }
     }, this.refreshRate);
